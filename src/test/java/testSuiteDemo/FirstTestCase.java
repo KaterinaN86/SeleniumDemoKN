@@ -1,6 +1,7 @@
 package testSuiteDemo;
 
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 /**
  * Open browser
@@ -24,4 +25,15 @@ public class FirstTestCase {
     void teardown(){
         System.out.println("Closing browser test");
     }
+
+//Soft asserts
+//    String title = driver.getTitle();
+//    SoftAssert softAssert = new SoftAssert();
+//        System.out.println("*** test case two started ***");
+//        softAssert.assertEquals(title, "Hello", "First soft assert failed");
+//        System.out.println("hard assert success....");
+//        softAssert.assertTrue(title.equals("Swag Labs"), "Second soft assert failed");
+//        softAssert.assertTrue("Welcome".equals("welcomeeee"), "Third soft assert failed");
+//        System.out.println("*** test case two executed successfully ***");
+//        softAssert.assertAll();
 }

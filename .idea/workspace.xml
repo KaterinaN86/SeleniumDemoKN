@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b2e14ef-64ce-4612-89c6-6d20d659df79" name="Changes" comment="Added text to README">
-      <change afterPath="$PROJECT_DIR$/src/test/java/assignmentTestSuite/TestCase1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testSuiteDemo/FirstTestCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/assignmentTestSuite/TestCase1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignmentTestSuite/TestCase1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testSuiteDemo/FirstTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testSuiteDemo/FirstTestCase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +41,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RunManager" selected="TestNG.TestCase1">
