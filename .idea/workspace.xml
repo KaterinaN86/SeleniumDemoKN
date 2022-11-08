@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b2e14ef-64ce-4612-89c6-6d20d659df79" name="Changes" comment="Added new files" />
+    <list default="true" id="8b2e14ef-64ce-4612-89c6-6d20d659df79" name="Changes" comment="Added text to README">
+      <change afterPath="$PROJECT_DIR$/src/test/java/assignmentTestSuite/TestCase1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testSuiteDemo/FirstTestCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,10 +44,10 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "vcs.Git"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TestNG.TestCase1">
     <configuration name="FirstScriptTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumDemoKN" />
       <extension name="coverage">
@@ -56,9 +63,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FirstTestCase" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumDemoKN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testSuiteDemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testSuiteDemo" />
+      <option name="MAIN_CLASS_NAME" value="testSuiteDemo.FirstTestCase" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCase1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumDemoKN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignmentTestSuite.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignmentTestSuite" />
+      <option name="MAIN_CLASS_NAME" value="assignmentTestSuite.TestCase1" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCase1" />
         <item itemvalue="JUnit.FirstScriptTest" />
+        <item itemvalue="TestNG.FirstTestCase" />
       </list>
     </recent_temporary>
   </component>
@@ -92,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667849030699</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added text to README">
+      <created>1667852274692</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667852274692</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +159,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Added new files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new files" />
+    <MESSAGE value="Added text to README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added text to README" />
   </component>
 </project>
