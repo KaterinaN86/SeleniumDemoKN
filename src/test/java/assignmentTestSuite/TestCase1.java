@@ -13,16 +13,22 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import java.sql.SQLOutput;
+
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * 1. Create setup method that will run first and instantiate the web driver
+ * 1. Create setup method that will run first and instantiate the web driver and wait driver
  * 2. Open browser
  * 3. Login
- * 4. Verify elements are present on products page
+ * 4. Verify elements are present on products page:
+ * - "PRODUCTS" header
+ * - shopping cart
+ * - burger menu in the upper left corner
+ * - Twitter, Facebook, Linkedin links
+ * - Logout
+ * 5. Close browser
  */
 
 public class TestCase1 {
@@ -35,7 +41,6 @@ public class TestCase1 {
     //creates WebDriver instance
     @BeforeTest
     void setup() {
-
         System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
         baseUrl = "https://www.saucedemo.com/";
         driver = new ChromeDriver();
@@ -47,9 +52,6 @@ public class TestCase1 {
     void open() {
         System.out.println("Launching Chrome browser");
         driver.get(baseUrl);
-
-        //using implicit wait
-       // driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
     }
 
     @Test(priority = 1)
@@ -75,7 +77,7 @@ public class TestCase1 {
 
     @Test(priority = 2)
     void verifyProductsElements() {
-        Reporter.log("This test verifies several elements are present in products page");
+
         //creating softAssert object
         SoftAssert softAssert = new SoftAssert();
 
@@ -114,10 +116,9 @@ public class TestCase1 {
 
     }
 
-
+    //close browser after tests are completed
     @AfterTest
     public void terminateBrowser() {
-
         driver.quit();
     }
 }

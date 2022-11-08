@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b2e14ef-64ce-4612-89c6-6d20d659df79" name="Changes" comment="Added text to README">
+      <change afterPath="$PROJECT_DIR$/src/test/java/assignmentTestSuite/TestCase2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/assignmentTestSuite/TestCase1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignmentTestSuite/TestCase1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testSuiteDemo/FirstTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testSuiteDemo/FirstTestCase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +44,7 @@
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.TestCase1">
+  <component name="RunManager" selected="TestNG.TestCase2">
     <configuration name="FirstScriptTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumDemoKN" />
       <extension name="coverage">
@@ -94,8 +94,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestCase2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumDemoKN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignmentTestSuite.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignmentTestSuite" />
+      <option name="MAIN_CLASS_NAME" value="assignmentTestSuite.TestCase2" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCase2" />
         <item itemvalue="TestNG.TestCase1" />
         <item itemvalue="JUnit.FirstScriptTest" />
         <item itemvalue="TestNG.FirstTestCase" />
