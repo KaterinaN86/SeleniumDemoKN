@@ -2,106 +2,161 @@ package assignmentTestSuite;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.Reporter;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-/**
- * 1. Create setup method that will run first and instantiate the web driver and wait driver
- * 2. Open Edge Browser
- * 3. Login
- * 4. Click on Sauce Labs Backpack product and verify title, description and price
- */
+import java.time.Duration;
+import java.util.List;
+import java.util.Random;
+
 
 public class TestCase2 extends BaseTestCase {
 
-    //expected title
     String title = "Sauce Labs Backpack";
-    //expected description
     String description = "carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.";
     String price = "$29.99";
     String firstName = "Katerina";
     String lastName = "Naumova";
     String zipCode = "7000";
+    String thankYouMsg = "THANK YOU FOR YOUR ORDER";
+
+    @BeforeTest
+    void setup() {
+        Reporter.log("Setting the path to edge driver");
+        System.setProperty("webdriver.edge.driver", "src\\test\\resources\\msedgedriver.exe");
+        Reporter.log("Initializing baseUrl variable which defines tested url");
+        baseUrl = "https://www.saucedemo.com/";
+        Reporter.log("Instantiating edge driver");
+        driver = new EdgeDriver();
+        Reporter.log("Instantiating wait driver and defining explicit wait duration of 5 seconds");
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    }
 
     @Test(priority = 2)
-    void clickSauceLabsBackpack(){
-        WebElement backpackEl = wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//a[contains(@id,'item_4')]"))));
-        backpackEl.click();
-        System.out.println("Clicked on Sauce Labs Backpack product");
+    void clickSauceLabsBackpack() {
+        Reporter.log("Click on Sauce Labs Backpack product link to open inventory item details page");
+        List<WebElement> backpackElements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//a[contains(@id,'item_4')]")));
+        Random random = new Random();
+        // generate random number from 0 to 1
+        int number = random.nextInt(2);
+        WebElement el = backpackElements.get(number);
+        if ((el.getText() == "")) {
+            System.out.println("Clicked on Sauce Labs Backpack product image");
+        } else {
+            System.out.println("Clicked on Sauce Labs Backpack product title");
+        }
+        el.click();
         //waiting for container to load
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("inventory_details_desc_container")));
     }
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     void verifySauceLabsBackpackTitle() {
-
-
-
+        Reporter.log("Verify product title on inventory item page is set to specified text");
         System.out.println("******Verifying title*******");
         WebElement titleEl = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='inventory_details_desc_container']//div[1]")));
-        softAssert.assertEquals(titleEl.getText(), title);
+        Assert.assertEquals(titleEl.getText(), title);
+    }
+
+    @Test(priority = 4)
+    void verifySauceLabsBackpackDescription() {
+        Reporter.log("Verify product description on inventory item page is set to specified text.");
         System.out.println("******Verifying description*******");
         WebElement descriptionEl = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='inventory_details_desc_container']//div[2]")));
-        softAssert.assertEquals(descriptionEl.getText(), description);
+        Assert.assertEquals(descriptionEl.getText(), description);
+    }
+
+    @Test(priority = 5)
+    void verifySauceLabsBackpackPrice() {
+        Reporter.log("Verify product price on inventory item page is set to specified value.");
         System.out.println("******Verifying price*******");
         WebElement priceEl = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='inventory_details_desc_container']//div[3]")));
-        softAssert.assertEquals(priceEl.getText(), price);
+        Assert.assertEquals(priceEl.getText(), price);
+    }
 
+    @Test(priority = 6)
+    void addProductToCart() {
+        Reporter.log("Add product to cart by using \"add to cart\" button.");
         System.out.println("Click button add to cart");
         WebElement addToCartBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("add-to-cart-sauce-labs-backpack")));
         addToCartBtn.click();
-
     }
 
-    @Test(priority = 3)
+    @Test(priority = 7)
     void backToProducts() {
+        Reporter.log("Go back by using \"back to products\" button.");
         System.out.println("Click back to products button");
         WebElement backToProductsBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("back-to-products")));
         backToProductsBtn.click();
     }
 
-    @Test(priority = 4)
+    @Test(priority = 8)
     void addFleeceJacketToCart() {
+        Reporter.log("Add fleece jacket product to cart by using \"add to cart\" button from product home page.");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("inventory_container")));
         System.out.println("Adding fleece jacket product to cart");
-        WebElement addFleeceJacketBtn = wait.until(ExpectedConditions.elementToBeClickable(By.name("add-to-cart-sauce-labs-fleece-jacket")));
+        WebElement addFleeceJacketBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[name='add-to-cart-sauce-labs-fleece-jacket']")));
         addFleeceJacketBtn.click();
     }
 
-    @Test(priority = 5)
+    @Test(priority = 9)
     void openShoppingCartPage() {
+        Reporter.log("Open shopping cart page by using button with shopping cart icon.");
         System.out.println("Opening shopping cart page");
         WebElement shoppingCartBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='shopping_cart_link']")));
         shoppingCartBtn.click();
     }
 
-    @Test(priority = 6)
+    @Test(priority = 10)
     void checkoutOrder() {
+        Reporter.log("Open check out form by using \"check out\" button.");
         System.out.println("Checking out order");
         WebElement checkOutBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("checkout")));
         checkOutBtn.click();
     }
 
-    @Test(priority = 7)
-    void fillCheckoutForm() {
-
-
-
+    @Test(priority = 11)
+    void fillFirstName() {
+        Reporter.log("Fill in text input element for first name with specified value.");
         System.out.println("Entering data in checkout form");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("checkout_info_container")));
-        System.out.println("***********Filling in first name text input");
+        System.out.println("***********Filling in first name text input***************");
         WebElement firstNameEl = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='checkout_info']//div[1]//input")));
         firstNameEl.sendKeys(firstName);
-        System.out.println("***********Filling in last name text input");
+    }
+
+    @Test(priority = 12)
+    void fillLastName() {
+        Reporter.log("Fill in text input element for last name with specified value.");
+        System.out.println("***********Filling in last name text input**************");
         WebElement lastNameEl = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='checkout_info']//div[2]//input")));
         lastNameEl.sendKeys(lastName);
-        System.out.println("***********Filling in ZIP/Postal code text input");
+    }
+
+    @Test(priority = 13)
+    void fillZipPostalCode() {
+        Reporter.log("Fill in text input element for ZIP/Postal code with specified value.");
+        System.out.println("***********Filling in ZIP/Postal code text input**************");
         WebElement zipCodeEl = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='checkout_info']//div[3]//input")));
         zipCodeEl.sendKeys(zipCode);
+    }
+
+    @Test(priority = 14)
+    void continueToCheckOut() {
+        Reporter.log("Use button \"continue\".");
         System.out.println("Click continue button");
         WebElement continueBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("continue")));
         continueBtn.submit();
+    }
+
+    @Test(priority = 15)
+    void finishOrder() {
+        Reporter.log("Use button \"finish\" after list of products in cart is displayed.");
         System.out.println("List of products in cart displayed");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("checkout_summary_container")));
         System.out.println("Click finish button");
@@ -109,15 +164,13 @@ public class TestCase2 extends BaseTestCase {
         finishBtn.click();
     }
 
-    @Test(priority = 8)
+    @Test(priority = 16)
     void verifyThankYou() {
-        String thankYouMsg = "THANK YOU FOR YOUR ORDER";
+        Reporter.log("Verify thank you message is displayed and text is equal to specified value.");
         System.out.println("Checkout completed");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("checkout_complete_container")));
-        System.out.println("*********Verifying thank you message");
+        System.out.println("*********Verifying thank you message*************");
         WebElement thankYouEl = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h2[@class='complete-header']")));
         Assert.assertEquals(thankYouEl.getText(), thankYouMsg);
-
     }
-
 }
