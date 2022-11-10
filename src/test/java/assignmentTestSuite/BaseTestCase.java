@@ -14,6 +14,18 @@ import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
+/**
+ * Variables for driver, URL to be tested wait driver, soft assert object are created.
+ * Variables for username and password are created and initialized.
+ * Declared of setup method called before the fist test is executed.
+ * * Setup method initializes driver, baseUrl and wait variables.
+ * Declared open test method that uses the driver to open specified web browser.
+ * Declared inputUsername test method that sends input data to username text input element in login form.
+ * Declared inputPassword test method that sends input data to password text input element in login form.
+ * Declared login test method that submits entered data.
+ * Declared terminateBrowser test method executed after all tests in the class are finished. This method uses the driver to close open browser.
+ */
+
 public class BaseTestCase {
 
     public WebDriver driver;

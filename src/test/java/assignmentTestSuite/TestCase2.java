@@ -14,6 +14,24 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Variables for inventory item details are initialized (title, description and price).
+ * Variables for input data required in check-out form are initialized (first name, last name, ZIP code).
+ * Variable for thank you message when finishing order is declared.
+ * Overridden setup method, Edge browser used for this test case.
+ * Declared clickSauceLabsBackpack test method that opens backpack item details page.
+ * Declared verifySauceLabsBackpackTitle, verifySauceLabsBackpackDescription and verifySauceLabsBackpackPrice test methods that verify corresponding data.
+ * Declared addProductToCart test method that adds backpack item to cart by using "add to cart" button on inventory item details page.
+ * Declared backToProducts test methods that uses "back to products" button on inventory item details page to navigate back to products home page.
+ * Declared addFleeceJacketToCart test method that adds fleece jacket item to cart by using corresponding "add to cart" button on products home page.
+ * Declared openShoppingCartPage test method that opens shopping cart page by using shopping cart link icon.
+ * Declared checkoutOrder test method that opens check out form by using "checkout" button on shopping cart details page.
+ * Declared fillFirstName, fillLastName and fillZipPostalCode test methods that fill in corresponding text input elements in checkout form. Specified values for previously defined variables are used.
+ * Declared continueToCheckOut test method that uses "continue" button to open step two of check out process.
+ * Declared finishOrder test method to finalize checkout process by using "finish" button.
+ * Declared verifyThankYou test method that verifies specified thank you message is displayed and checkout procces is completed.
+ */
+
 
 public class TestCase2 extends BaseTestCase {
 
@@ -25,6 +43,7 @@ public class TestCase2 extends BaseTestCase {
     String zipCode = "7000";
     String thankYouMsg = "THANK YOU FOR YOUR ORDER";
 
+    //method overrides method in BaseTesCase class. Driver for Edge Browser is used and wait driver is set to 3 seconds
     @BeforeTest
     void setup() {
         Reporter.log("Setting the path to edge driver");
@@ -34,17 +53,20 @@ public class TestCase2 extends BaseTestCase {
         Reporter.log("Instantiating edge driver");
         driver = new EdgeDriver();
         Reporter.log("Instantiating wait driver and defining explicit wait duration of 5 seconds");
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
     @Test(priority = 2)
     void clickSauceLabsBackpack() {
         Reporter.log("Click on Sauce Labs Backpack product link to open inventory item details page");
+        //List of link elements that lead to the details page for backpack item
         List<WebElement> backpackElements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//a[contains(@id,'item_4')]")));
         Random random = new Random();
         // generate random number from 0 to 1
         int number = random.nextInt(2);
+        //an element from the list is randomly picked
         WebElement el = backpackElements.get(number);
+        //if the element has no text than the image was clicked
         if ((el.getText() == "")) {
             System.out.println("Clicked on Sauce Labs Backpack product image");
         } else {
@@ -81,26 +103,26 @@ public class TestCase2 extends BaseTestCase {
 
     @Test(priority = 6)
     void addProductToCart() {
-        Reporter.log("Add product to cart by using \"add to cart\" button.");
-        System.out.println("Click button add to cart");
-        WebElement addToCartBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("add-to-cart-sauce-labs-backpack")));
+        Reporter.log("Add product backpack to cart by using \"add to cart\" button on inventory item details page.");
+        System.out.println("Click button \"add to cart\" for backpack item on inventory item details page");
+        WebElement addToCartBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='inventory_details_desc_container']/button")));
         addToCartBtn.click();
     }
 
     @Test(priority = 7)
     void backToProducts() {
-        Reporter.log("Go back by using \"back to products\" button.");
-        System.out.println("Click back to products button");
+        Reporter.log("Go back to products home page by using \"back to products\" button.");
+        System.out.println("Click back to products button on inventory item details page");
         WebElement backToProductsBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("back-to-products")));
         backToProductsBtn.click();
     }
 
     @Test(priority = 8)
     void addFleeceJacketToCart() {
-        Reporter.log("Add fleece jacket product to cart by using \"add to cart\" button from product home page.");
+        Reporter.log("Add fleece jacket product to cart by using \"add to cart\" button from products home page.");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("inventory_container")));
         System.out.println("Adding fleece jacket product to cart");
-        WebElement addFleeceJacketBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[name='add-to-cart-sauce-labs-fleece-jacket']")));
+        WebElement addFleeceJacketBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@name='add-to-cart-sauce-labs-fleece-jacket']")));
         addFleeceJacketBtn.click();
     }
 
@@ -156,8 +178,8 @@ public class TestCase2 extends BaseTestCase {
 
     @Test(priority = 15)
     void finishOrder() {
-        Reporter.log("Use button \"finish\" after list of products in cart is displayed.");
-        System.out.println("List of products in cart displayed");
+        Reporter.log("Use button \"finish\" after list of products in cart is displayed (step two of checkout).");
+        System.out.println("List of products in cart displayed (final step of checkout)");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("checkout_summary_container")));
         System.out.println("Click finish button");
         WebElement finishBtn = wait.until(ExpectedConditions.elementToBeClickable(By.name("finish")));

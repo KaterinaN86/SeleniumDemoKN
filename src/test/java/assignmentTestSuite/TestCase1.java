@@ -8,23 +8,26 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 /**
- * Verify following elements are present on products page:
- * - "PRODUCTS" header
- * - shopping cart
- * - burger menu in the upper left corner
- * - Twitter, Facebook, Linkedin links
- * - Logout link in menu
+ * Inherits all methods from BaseTestCase class, which means prior to execution of test methods in this class standard user has been logged in.
+ * Declared test methods that verify following elements are present on products page:
+ * - verifyProductsHeader test method verifies header element with text "Products" is present.
+ * - verifyProductsShoppingCart test method verifies shopping cart element is present.
+ * - verifyMenuBtn test method verifies burger menu element is present in the upper left corner.
+ * - verifyTwitterMediaLink, verifyFacebookMediaLink and verifyLinkedinMediaLink test methods verify Twitter, Facebook and
+     LinkedIn links are present correspondingly.
+ * - verifyLogoutLink test method clicks on menu element in upper left corner and verifies logout link is present in menu.
  */
 
 public class TestCase1 extends BaseTestCase {
 
+    //creating field variable for burgerMenu element which will be used in multiple methods
     WebElement burgerMenuBtn;
 
     @Test(priority = 2)
     void verifyProductsHeader() {
         Reporter.log("Verify header element with text PRODUCTS is present on products home page.");
         System.out.println("*********Checking for header element********");
-        boolean headerPresent = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("title"))).isDisplayed();
+        boolean headerPresent = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='header_secondary_container']/span[text()='Products']"))).isDisplayed();
         softAssert.assertEquals(headerPresent, true);
     }
 

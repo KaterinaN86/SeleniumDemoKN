@@ -12,8 +12,9 @@ import java.util.List;
 
 /**
  * Test login with locked-out user
- * 1. Enter username and password
- * 2. Verify error message is visible
+ * inputUsername method is overridden and username for locked out user is used.
+ * Declared verifyLockedOutErrorMsg test method that verifies corresponding error message.
+ * Declared verifyErrorIconIsVisible that verifies all error icons are visible, using soft asserts.
  */
 
 public class TestCase3 extends BaseTestCase {

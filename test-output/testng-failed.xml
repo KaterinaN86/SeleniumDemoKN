@@ -5,15 +5,9 @@
     <classes>
       <class name="assignmentTestSuite.TestCase5">
         <methods>
-          <include name="addFleeceJacketToCart"/>
           <include name="terminateBrowser"/>
           <include name="setup"/>
-          <include name="addProductToCart"/>
-          <include name="verifySauceLabsBackpackDescription"/>
           <include name="verifySauceLabsBackpackPrice"/>
-          <include name="verifyThankYou"/>
-          <include name="finishOrder"/>
-          <include name="verifySauceLabsBackpackTitle"/>
         </methods>
       </class> <!-- assignmentTestSuite.TestCase5 -->
     </classes>
