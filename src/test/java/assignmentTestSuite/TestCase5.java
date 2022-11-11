@@ -7,6 +7,15 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+/** Testing with problem user and adding negative scenario
+ *
+ * Test method inputUsername is overridden and text input for username is set to problemUsername variable.
+ * Same actions are performed as in TestCase2.
+ * Test methods verifySauceLabsBackpackTitle, verifySauceLabsBackpackDescription and verifySauceLabsBackpackPrice are overridden to verify that data for fleece jacket item is shown instead.
+ * Test method addProductToCart is overridden to verify button "add to cart" for backpack item on details page is not visible.
+ * Disabled finishOrder and verifyThankYou test methods to avoid failed tests because actions in methods can not be performed.
+ */
+
 public class TestCase5 extends TestCase2 {
 
     String problemUsername = "problem_user";
@@ -26,7 +35,7 @@ public class TestCase5 extends TestCase2 {
     @Test(priority = 3)
     void verifySauceLabsBackpackTitle() {
         title = "Sauce Labs Fleece Jacket";
-        Reporter.log("Verify product title on inventory item page for backpack item is set to title for fleece jacket item");
+        Reporter.log("Verify product title on inventory item details page for backpack item is set to title for fleece jacket item");
         System.out.println("******Verifying title for backpack item is set to title for fleece jacket*******");
         WebElement titleEl = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='inventory_details_desc_container']//div[1]")));
         Assert.assertEquals(titleEl.getText(), title);
@@ -35,7 +44,7 @@ public class TestCase5 extends TestCase2 {
     @Test(priority = 4)
     void verifySauceLabsBackpackDescription() {
         description = "It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.";
-        Reporter.log("Verify product description on inventory item page for backpack item is set to description for fleece jacket item");
+        Reporter.log("Verify product description on inventory item details page for backpack item is set to description for fleece jacket item");
         System.out.println("******Verifying description for backpack is set to description for fleece jacket*******");
         WebElement descriptionEl = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='inventory_details_desc_container']//div[2]")));
         Assert.assertEquals(descriptionEl.getText(), description);
@@ -44,7 +53,7 @@ public class TestCase5 extends TestCase2 {
     @Test(priority = 5)
     void verifySauceLabsBackpackPrice() {
         price = "$49.99";
-        Reporter.log("Verify product price on inventory item page for backpack item is set to price for fleece jacket item");
+        Reporter.log("Verify product price on inventory item details page for backpack item is set to price for fleece jacket item");
         System.out.println("******Verifying price for backpack item is set to fleet jacket item price*******");
         WebElement priceEl = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='inventory_details_desc_container']//div[3]")));
         Assert.assertEquals(priceEl.getText(), price);

@@ -7,7 +7,7 @@
         <methods>
           <include name="terminateBrowser"/>
           <include name="setup"/>
-          <include name="verifySauceLabsBackpackPrice"/>
+          <include name="continueToCheckOut"/>
         </methods>
       </class> <!-- assignmentTestSuite.TestCase5 -->
     </classes>

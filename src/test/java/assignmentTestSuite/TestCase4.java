@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
  * Declared verifyEmptyZipCode test method that verifies zip code value is empty string.
  * Declared verifyZipErrorMsg test method that verifies specified error message is displayed.
  * Declared verifyCheckoutPageNotOpen test method that verifies page with next step of checkout is not displayed when "continue" button is clicked.
- * Disabled finishOrder and verifyThankYou test methods to avoid failed tests because actions in methods can not be performed. *
+ * Disabled finishOrder and verifyThankYou test methods to avoid failed tests because actions in methods can not be performed.
  */
 public class TestCase4 extends TestCase2 {
 
@@ -72,5 +72,4 @@ public class TestCase4 extends TestCase2 {
     void verifyThankYou() {
 
     }
-
 }

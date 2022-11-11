@@ -9,14 +9,12 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import java.util.List;
-
 /**
  * Test login with locked-out user
  * inputUsername method is overridden and username for locked out user is used.
  * Declared verifyLockedOutErrorMsg test method that verifies corresponding error message.
  * Declared verifyErrorIconIsVisible that verifies all error icons are visible, using soft asserts.
  */
-
 public class TestCase3 extends BaseTestCase {
     String lockedOutUsername = "locked_out_user";
     String lockedOutMsg = "Epic sadface: Sorry, this user has been locked out.";

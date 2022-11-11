@@ -29,9 +29,8 @@ import java.util.Random;
  * Declared fillFirstName, fillLastName and fillZipPostalCode test methods that fill in corresponding text input elements in checkout form. Specified values for previously defined variables are used.
  * Declared continueToCheckOut test method that uses "continue" button to open step two of check out process.
  * Declared finishOrder test method to finalize checkout process by using "finish" button.
- * Declared verifyThankYou test method that verifies specified thank you message is displayed and checkout procces is completed.
+ * Declared verifyThankYou test method that verifies specified thank you message is displayed and checkout process is completed.
  */
-
 
 public class TestCase2 extends BaseTestCase {
 
