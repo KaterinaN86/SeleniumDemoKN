@@ -6,22 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8b2e14ef-64ce-4612-89c6-6d20d659df79" name="Changes" comment="Added text to README">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/Default Suite/SeleniumDemoKN.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/Default Suite/SeleniumDemoKN.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/Default Suite/testng-failed.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/junitreports/TEST-assignmentTestSuite.TestCase2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Default Suite/SeleniumDemoKN.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Default Suite/classes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Default Suite/groups.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Default Suite/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Default Suite/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Default Suite/methods-alphabetical.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Default Suite/methods-not-run.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Default Suite/methods.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Default Suite/reporter-output.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Default Suite/testng.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/Default Suite/toc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/old/index.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +42,36 @@
     "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.TestCase2">
+  <component name="RunManager" selected="TestNG.TestCase3">
+    <configuration name="BaseTestCase" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumDemoKN" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignmentTestSuite.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="assignmentTestSuite" />
+      <option name="MAIN_CLASS_NAME" value="assignmentTestSuite.BaseTestCase" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners>
+        <listener class="org.testng.reporters.EmailableReporter" />
+      </listeners>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestCase1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SeleniumDemoKN" />
       <shortenClasspath name="NONE" />
@@ -146,35 +159,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCase4" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SeleniumDemoKN" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignmentTestSuite.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="assignmentTestSuite" />
-      <option name="MAIN_CLASS_NAME" value="assignmentTestSuite.TestCase4" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners>
-        <listener class="org.testng.reporters.EmailableReporter" />
-      </listeners>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestCase5" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SeleniumDemoKN" />
       <shortenClasspath name="NONE" />
@@ -206,19 +190,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.TestCase5" />
       <item itemvalue="TestNG.TestCase3" />
-      <item itemvalue="TestNG.TestCase4" />
+      <item itemvalue="TestNG.BaseTestCase" />
+      <item itemvalue="TestNG.TestCase5" />
       <item itemvalue="TestNG.TestCase1" />
       <item itemvalue="TestNG.TestCase2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCase3" />
+        <item itemvalue="TestNG.BaseTestCase" />
         <item itemvalue="TestNG.TestCase2" />
         <item itemvalue="TestNG.TestCase1" />
         <item itemvalue="TestNG.TestCase5" />
-        <item itemvalue="TestNG.TestCase4" />
-        <item itemvalue="TestNG.TestCase3" />
       </list>
     </recent_temporary>
   </component>
