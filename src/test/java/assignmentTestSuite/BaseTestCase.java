@@ -50,6 +50,7 @@ public class BaseTestCase {
         driver = new ChromeDriver();
         Reporter.log("Instantiating wait driver and defining explicit wait duration of 5 seconds");
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(1000));
     }
 
     //Opens browser

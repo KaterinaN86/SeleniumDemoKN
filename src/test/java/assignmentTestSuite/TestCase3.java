@@ -46,6 +46,7 @@ public class TestCase3 extends BaseTestCase {
         Reporter.log("Verify error icons are displayed in login form");
         softAssert = new SoftAssert();
         System.out.println("********Checking all error icons are displayed*************");
+        //Selecting all error icon elements
         List<WebElement> errorIconElements = (List<WebElement>) wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("error_icon")));
         for (WebElement el : errorIconElements) {
             softAssert.assertEquals(el.isDisplayed(), true);

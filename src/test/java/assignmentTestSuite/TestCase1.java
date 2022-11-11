@@ -52,21 +52,21 @@ public class TestCase1 extends BaseTestCase {
     void verifyTwitterMediaLink() {
         Reporter.log("Verify twitter link is present on products home page.");
         System.out.println("*********Checking for twitter link*************");
-        softAssert.assertEquals(wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//li[@class='social_twitter']"))).isDisplayed(), true);
+        softAssert.assertEquals(wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[@class='social']/li[1]/a[@href='https://twitter.com/saucelabs']"))).isDisplayed(), true);
     }
 
     @Test(priority = 6)
     void verifyFacebookMediaLink() {
         Reporter.log("Verify facebook link is present on products home page.");
         System.out.println("*********Checking for facebook link***************");
-        softAssert.assertEquals(wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//li[@class='social_facebook']"))).isDisplayed(), true);
+        softAssert.assertEquals(wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[@class='social']/li[2]/a[@href='https://www.facebook.com/saucelabs']"))).isDisplayed(), true);
     }
 
     @Test(priority = 7)
     void verifyLinkedinMediaLink() {
         Reporter.log("Verify linkedin link is present on products home page.");
         System.out.println("*********Checking for linkedin link************");
-        softAssert.assertEquals(wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//li[@class='social_linkedin']"))).isDisplayed(), true);
+        softAssert.assertEquals(wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[@class='social']/li[3]/a[@href='https://www.linkedin.com/company/sauce-labs/']"))).isDisplayed(), true);
     }
 
     @Test(priority = 8)
