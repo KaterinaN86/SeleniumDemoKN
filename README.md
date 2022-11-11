@@ -83,4 +83,4 @@ Testing [https://www.saucedemo.com/](https://www.saucedemo.com/) with Selenium a
 
 **Notes:**
 
-- HTMl report for test case that was executed last is generated in ** ** file.
+- HTMl report for test case that was executed last is generated in **/test-output/emailable-report.html** file.
