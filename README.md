@@ -80,3 +80,7 @@ Testing [https://www.saucedemo.com/](https://www.saucedemo.com/) with Selenium a
 - Test methods **verifySauceLabsBackpackTitle**, **verifySauceLabsBackpackDescription** and **verifySauceLabsBackpackPrice** are overridden to verify that data for **fleece jacket item** is shown instead.
 - Test method **addProductToCart** is overridden to verify button "add to cart" for backpack item on details page is not visible.
 - Disabled **finishOrder** and **verifyThankYou** test methods to avoid failed tests because actions in methods can not be performed.
+
+**Notes:**
+
+- HTMl report for test case that was executed last is generated in **/test-output/emailable-report.html** file.
