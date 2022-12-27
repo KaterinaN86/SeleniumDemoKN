@@ -15,7 +15,7 @@ import org.testng.asserts.SoftAssert;
 import java.time.Duration;
 
 /**
- * Variables for driver, URL to be tested wait driver, soft assert object are created.
+ * Variables for driver, URL to be tested, wait driver, soft assert object.
  * Variables for username and password are created and initialized.
  * Declared of setup method called before the fist test is executed.
  * * Setup method initializes driver, baseUrl and wait variables.
@@ -43,7 +43,7 @@ public class BaseTestCase {
     @BeforeTest
     void setup() {
         Reporter.log("Setting the path to chrome driver");
-        System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
         Reporter.log("Initializing baseUrl variable which defines tested url");
         baseUrl = "https://www.saucedemo.com/";
         Reporter.log("Instantiating chrome driver");

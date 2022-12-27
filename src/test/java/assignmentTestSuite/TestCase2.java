@@ -46,7 +46,7 @@ public class TestCase2 extends BaseTestCase {
     @BeforeTest
     void setup() {
         Reporter.log("Setting the path to edge driver");
-        System.setProperty("webdriver.edge.driver", "src\\test\\resources\\msedgedriver.exe");
+        //System.setProperty("webdriver.edge.driver", "src\\test\\resources\\msedgedriver.exe");
         Reporter.log("Initializing baseUrl variable which defines tested url");
         baseUrl = "https://www.saucedemo.com/";
         Reporter.log("Instantiating edge driver");
